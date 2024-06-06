@@ -1,0 +1,147 @@
+{
+  "evaluation_parameters": {},
+  "meta": {
+    "active_batch_definition": {
+      "batch_identifiers": {},
+      "data_asset_name": "my_asset",
+      "data_connector_name": "fluent",
+      "datasource_name": "my_datasource"
+    },
+    "batch_markers": {
+      "ge_load_time": "20240605T122600.600041Z"
+    },
+    "batch_spec": {
+      "batch_identifiers": {},
+      "data_asset_name": "my_asset",
+      "schema_name": "Production",
+      "table_name": "Product",
+      "type": "table"
+    },
+    "checkpoint_id": null,
+    "checkpoint_name": "my_checkpoint",
+    "expectation_suite_name": "my_expectation_suite",
+    "great_expectations_version": "0.18.15",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2024-06-05T14:26:00.578294+02:00"
+    },
+    "validation_id": null,
+    "validation_time": "20240605T122600.610057Z"
+  },
+  "results": [
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "my_datasource-my_asset",
+          "column": "ProductID"
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_index_list": [],
+        "unexpected_index_query": "SELECT [ProductID], [ProductID] \nFROM [Production].Product \nWHERE [ProductID] IS NULL;",
+        "unexpected_list": [],
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "my_datasource-my_asset",
+          "column": "Class",
+          "value_set": [
+            "H",
+            "M",
+            "L"
+          ]
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "missing_count": 257,
+        "missing_percent": 50.99206349206349,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_index_column_names": [
+          "ProductID"
+        ],
+        "unexpected_index_list": [],
+        "unexpected_index_query": "SELECT [ProductID], [Class] \nFROM [Production].Product \nWHERE [Class] IS NOT NULL AND ([Class] NOT IN ('H', 'M', 'L'));",
+        "unexpected_list": [],
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "my_datasource-my_asset",
+          "column": "WeightUnitMeasureCode",
+          "value_set": [
+            "LB",
+            "G"
+          ]
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {
+        "element_count": 504,
+        "missing_count": 299,
+        "missing_percent": 59.32539682539682,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_index_column_names": [
+          "ProductID"
+        ],
+        "unexpected_index_list": [],
+        "unexpected_index_query": "SELECT [ProductID], [WeightUnitMeasureCode] \nFROM [Production].Product \nWHERE [WeightUnitMeasureCode] IS NOT NULL AND ([WeightUnitMeasureCode] NOT IN ('LB', 'G'));",
+        "unexpected_list": [],
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    }
+  ],
+  "statistics": {
+    "evaluated_expectations": 3,
+    "success_percent": 100.0,
+    "successful_expectations": 3,
+    "unsuccessful_expectations": 0
+  },
+  "success": true
+}
