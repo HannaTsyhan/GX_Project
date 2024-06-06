@@ -13,5 +13,6 @@ Installation
 git clone
 https://github.com/HannaTsyhan/GX_Project.git
 
-Running tests
+Running tests:
+
 To execute run main.py
