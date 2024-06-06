@@ -1,8 +1,8 @@
 # GX_Project
 
 Prerequisites
-Python 3.x
-MSSQL Server
+1. Python 3.x
+2. MSSQL Server
 
 Installation
 1. Set up MSSQL "AdventureWorks2012" database locally
