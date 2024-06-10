@@ -1,10 +1,14 @@
+import os
 import great_expectations as gx
 from great_expectations.checkpoint import Checkpoint
+from dotenv import load_dotenv
+
 
 if __name__ == '__main__':
+    load_dotenv()
     context = gx.get_context()
     context.build_data_docs()
-    connection_string = "mssql+pyodbc://testLogin:11111@localhost:1433/AdventureWorks2012?driver=ODBC+Driver+17+for+SQL+Server&charset=utf&autocommit=true"
+    connection_string = f"mssql+pyodbc://{os.getenv('USERID')}:{os.getenv('PASSWORD')}@localhost:1433/AdventureWorks2012?driver=ODBC+Driver+17+for+SQL+Server&charset=utf&autocommit=true"
 
     datasource = context.sources.add_or_update_sql(
         name="my_datasource", connection_string=connection_string
