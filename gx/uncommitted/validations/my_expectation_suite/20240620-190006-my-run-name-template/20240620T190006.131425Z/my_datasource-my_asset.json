@@ -1,0 +1,42 @@
+{
+  "evaluation_parameters": {
+    "GT_PARAM": 1000,
+    "LT_PARAM": 50000
+  },
+  "meta": {
+    "active_batch_definition": {
+      "batch_identifiers": {},
+      "data_asset_name": "my_asset",
+      "data_connector_name": "fluent",
+      "datasource_name": "my_datasource"
+    },
+    "batch_markers": {
+      "ge_load_time": "20240620T190006.145694Z"
+    },
+    "batch_spec": {
+      "batch_identifiers": {},
+      "data_asset_name": "my_asset",
+      "schema_name": "Production",
+      "table_name": "Product",
+      "type": "table"
+    },
+    "checkpoint_id": null,
+    "checkpoint_name": "my_checkpoint",
+    "expectation_suite_name": "my_expectation_suite",
+    "great_expectations_version": "0.18.15",
+    "run_id": {
+      "run_name": "20240620-190006-my-run-name-template",
+      "run_time": "2024-06-20T21:00:06.131425+02:00"
+    },
+    "validation_id": null,
+    "validation_time": "20240620T190006.152925Z"
+  },
+  "results": [],
+  "statistics": {
+    "evaluated_expectations": 0,
+    "success_percent": null,
+    "successful_expectations": 0,
+    "unsuccessful_expectations": 0
+  },
+  "success": true
+}

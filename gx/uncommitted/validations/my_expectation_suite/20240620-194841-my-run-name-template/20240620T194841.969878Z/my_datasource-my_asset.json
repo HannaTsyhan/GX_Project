@@ -1,0 +1,83 @@
+{
+  "evaluation_parameters": {
+    "GT_PARAM": 1000,
+    "LT_PARAM": 50000
+  },
+  "meta": {
+    "active_batch_definition": {
+      "batch_identifiers": {},
+      "data_asset_name": "my_asset",
+      "data_connector_name": "fluent",
+      "datasource_name": "my_datasource"
+    },
+    "batch_markers": {
+      "ge_load_time": "20240620T194841.990673Z"
+    },
+    "batch_spec": {
+      "batch_identifiers": {},
+      "data_asset_name": "my_asset",
+      "schema_name": "Production",
+      "table_name": "Product",
+      "type": "table"
+    },
+    "checkpoint_id": null,
+    "checkpoint_name": "my_checkpoint",
+    "expectation_suite_name": "my_expectation_suite",
+    "great_expectations_version": "0.18.15",
+    "run_id": {
+      "run_name": "20240620-194841-my-run-name-template",
+      "run_time": "2024-06-20T21:48:41.969878+02:00"
+    },
+    "validation_id": null,
+    "validation_time": "20240620T194842.000967Z"
+  },
+  "results": [
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "my_datasource-my_asset",
+          "column": "Color",
+          "strictly": true
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "my_datasource-my_asset",
+          "column": "Color",
+          "value_set": [
+            "Greerrtt"
+          ]
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    }
+  ],
+  "statistics": {
+    "evaluated_expectations": 2,
+    "success_percent": 0.0,
+    "successful_expectations": 0,
+    "unsuccessful_expectations": 2
+  },
+  "success": false
+}
