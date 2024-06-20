@@ -30,7 +30,7 @@ if __name__ == '__main__':
     validator.head()
     validator.expect_column_values_to_not_be_null(column="ProductID")
     validator.expect_column_values_to_be_unique(column="ProductID")
-    validator.expect_column_values_to_not_be_null(column="Color")
+    validator.expect_column_values_to_not_be_null(column="Color", strictly=True)
     validator.expect_column_values_to_not_be_null(column="Name")
     validator.expect_column_values_to_not_be_null(column="ProductNumber")
 
@@ -42,7 +42,7 @@ if __name__ == '__main__':
     validator.expect_column_values_to_be_in_set("Color", value_set=expected_color_values)
     validator.expect_column_mean_to_be_between('Weight', min_value=2.10, max_value=1050)
 
-    validator.save_expectation_suite()
+    validator.save_expectation_suite(discard_failed_expectations=False)
 
 
     checkpoint: Checkpoint = Checkpoint(
@@ -74,7 +74,7 @@ if __name__ == '__main__':
         evaluation_parameters={"GT_PARAM": 1000, "LT_PARAM": 50000},
         runtime_configuration={
             "result_format": {
-                "result_format": "COMPLETE",
+                "result_format": "BOOLEAN_ONLY",
                 "unexpected_index_column_names": ["ProductID"],
                 "return_unexpected_index_query": True,
             },

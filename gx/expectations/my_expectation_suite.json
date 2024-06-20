@@ -19,6 +19,14 @@
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
+        "column": "Color",
+        "strictly": true
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
         "column": "Name"
       },
       "meta": {}
